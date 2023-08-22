@@ -1,4 +1,15 @@
-const myLibrary = [];
+const myLibrary = [
+    {
+        "title": "Bible",
+        "author": "God ",
+        "year": "2002"
+    },
+    {
+        "title": "Bible 2",
+        "author": "The Rock",
+        "year": "2022"
+    }
+];
 
 function Book(title, author, year) {
     this.title = title;
@@ -26,4 +37,21 @@ function addBookToLibrary() {
     })
 }
 
+
+
 addBookToLibrary()
+const container = document.querySelector('.container');
+const dispBtn = document.createElement('button');
+dispBtn.innerHTML = 'DISPLAY';
+container.appendChild(dispBtn);
+dispBtn.addEventListener('click', function(){
+    
+    console.clear()
+    myLibrary.forEach(element => {
+        const display = document.querySelector('.display');
+        const newDiv = document.createElement('div');
+        newDiv.innerHTML = 'Title - ' + element.title + '; Author - ' + element.author + '; Year - ' + element.year;
+        display.appendChild(newDiv);
+
+    });
+});
