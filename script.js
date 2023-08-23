@@ -18,12 +18,11 @@ function Book(title, author, year) {
     this.year = year;
   // the constructor...
 }
-
+const subBtn = document.querySelector('.mainBtn');
 function addBookToLibrary() {
     const bookInfo = document.querySelector('#bookInfo');
-    const subBtn = document.createElement('button');
+    
     subBtn.classList.add('subBtn');
-    bookInfo.appendChild(subBtn);
     // creates the button that will access the user's input
 
     subBtn.addEventListener('click', function(event, bookInfo){
@@ -32,8 +31,11 @@ function addBookToLibrary() {
         const author = document.querySelector('#Author');
         const year = document.querySelector('#Year');
 
+        if (title.value === '' || author.value === '' || year.value === ''){
+            alert('Please fill all fields');
+        }else {
         const newBook = new Book(title.value , author.value , year.value);
-        myLibrary.push(newBook);
+        myLibrary.push(newBook);}
         //creates the book object by taking user input, and pushes it into array
     })
 }
@@ -49,10 +51,7 @@ function displayObj(){
 
 function displayOnClick(){
     const sidebar = document.querySelector('.sidebar');
-    const dispBtn = document.createElement('button');
-    dispBtn.innerHTML = 'DISPLAY';
-    sidebar.appendChild(dispBtn);
-    dispBtn.addEventListener('click', function(){
+    subBtn.addEventListener('click', function(){
         
         const display = document.querySelector('.display');
         
