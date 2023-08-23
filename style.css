@@ -2,6 +2,37 @@ html, body {
     height: 100%;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    background-color: #0c4a6e;
+    color: #f0f9ff;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.user img {
+    border-radius: 50%;
+    height: 5em;
+}
+
+.user div {
+    display: flex;
+    flex-direction: column;
+    line-height: 1%;
+}
+
+.user div :last-child {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+
 .container {
     height: 50%;
     display: flex;
