@@ -9,6 +9,7 @@ const myLibrary = [
         "author": "The Rock",
         "year": "2022"
     }
+    //contains dummy objects for test purposes that SHOULD be deleted later
 ];
 
 function Book(title, author, year) {
@@ -33,25 +34,39 @@ function addBookToLibrary() {
 
         const newBook = new Book(title.value , author.value , year.value);
         myLibrary.push(newBook);
-        
+        //creates the book object by taking user input, and pushes it into array
     })
 }
 
-
-
-addBookToLibrary()
-const container = document.querySelector('.container');
-const dispBtn = document.createElement('button');
-dispBtn.innerHTML = 'DISPLAY';
-container.appendChild(dispBtn);
-dispBtn.addEventListener('click', function(){
-    
-    console.clear()
+function displayObj(){
     myLibrary.forEach(element => {
         const display = document.querySelector('.display');
         const newDiv = document.createElement('div');
         newDiv.innerHTML = 'Title - ' + element.title + '; Author - ' + element.author + '; Year - ' + element.year;
-        display.appendChild(newDiv);
+        display.appendChild(newDiv);})
+        //pulls each object from array and displays its properties on a div
+}
 
-    });
-});
+function displayOnClick(){
+    const container = document.querySelector('.container');
+    const dispBtn = document.createElement('button');
+    dispBtn.innerHTML = 'DISPLAY';
+    container.appendChild(dispBtn);
+    dispBtn.addEventListener('click', function(){
+        
+        const display = document.querySelector('.display');
+        
+        if (display.hasChildNodes()){
+            while (display.firstChild){
+                display.removeChild(display.firstChild)
+            }
+            displayObj()
+        }else {
+            displayObj()
+
+        };})
+        //calls the displayObj function on button click
+}
+
+addBookToLibrary()
+displayOnClick()
