@@ -48,10 +48,10 @@ function displayObj(){
 }
 
 function displayOnClick(){
-    const container = document.querySelector('.container');
+    const sidebar = document.querySelector('.sidebar');
     const dispBtn = document.createElement('button');
     dispBtn.innerHTML = 'DISPLAY';
-    container.appendChild(dispBtn);
+    sidebar.appendChild(dispBtn);
     dispBtn.addEventListener('click', function(){
         
         const display = document.querySelector('.display');

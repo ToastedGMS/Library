@@ -1,13 +1,23 @@
-html, body {
+html,body {
     height: 100%;
 }
-
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 1fr 5fr;
+    background-color: #bae6fd;
+    height: 100%;
+}
+/*header ssection */
 header {
     display: flex;
     justify-content: space-between;
     padding: 2%;
     background-color: #0c4a6e;
     color: #f0f9ff;
+    align-items: center;
+    grid-row: 1/2;
+    grid-column: 1/3;
 }
 
 .user {
@@ -32,19 +42,60 @@ header {
     font-size: 1.5em;
 }
 
+/*sidebar section*/
 
-.container {
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+
+.sidebar {
+    display: grid;
+    background-color: #0369a1;
+    box-sizing: border-box;
+    padding: 10%;
+    color: #f0f9ff;
+    grid-row: 2/3;
 }
-.display {
-    height: 50%;
+
+.sidebar label {
+    font-size: 1.2em;
 }
+
+.sidebar input {
+    border-radius: 15px;
+    padding: .2em;
+    border: none;
+    margin: .5em;
+}
+
+.sidebar input:focus {
+    border:1px solid #082f49;
+}
+
 .subBtn {
     width: 50px;
     height: 25px;
     border: 2px solid black;
     background-color: red;
+}
+
+/*book cards*/
+
+.display {
+    display: grid;
+    padding: 2.5em;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    height: 100%;
+    box-sizing: border-box;
+    grid-row: 2/3;
+    overflow: auto;
+}
+
+.display div {
+    background-color: #e0f2fe;
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    border: 2px solid #082f49;
+    padding: 2em;
+    
+    box-sizing: border-box;
 }

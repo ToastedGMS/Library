@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
     <header>
         <div class="user">
             <img src="userIcon.png" alt="user icon">
@@ -20,21 +21,22 @@
         </div>
         <h1>Library</h1>
     </header>
-    <div class="container">
-        <form id="bookInfo">
-            <label for="Title">Book Title</label>
-            <input type="text" name="Title" id="Title" placeholder="The Cat in The Hat...">
+        <div class="sidebar">
+            <form id="bookInfo">
+                <label for="Title">Book Title</label>
+                <input type="text" name="Title" id="Title" placeholder="The Cat in The Hat..."><br>
+                
+                <label for="Author">Author</label>
+                <input type="text" name="Author" id="Author" placeholder="Dr. Seuss..."><br>
+                
+                <label for="Year">Year of Publishing</label>    
+                <input type="number" name="Year" id="Year" placeholder="1957">
+                
+            </form>
+        </div>
+        <div class="display">
             
-            <label for="Author">Author</label>
-            <input type="text" name="Author" id="Author" placeholder="Dr. Seuss...">
-            
-            <label for="Year">Year of Publishing</label>    
-            <input type="number" name="Year" id="Year" placeholder="1957">
-            
-        </form>
-    </div>
-    <div class="display">
-        
+        </div>
     </div>
     <script src="script.js"></script>
 </body>
