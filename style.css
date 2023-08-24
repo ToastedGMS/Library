@@ -40,6 +40,31 @@ header {
     font-size: 1.5em;
 }
 
+.shwForm {
+    border: 1px solid transparent;
+    background-color: #0369a1;
+    border-radius: 15px;
+    padding: .5em;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    color: #f0f9ff;
+    height: 3em;
+}
+
+.mainBtn {
+    background-color: #0c4a6e;
+}
+
+.mainBtn:hover, .shwForm:hover{
+    border-color: #bae6fd;
+}
+
+.alt {
+    display: flex;
+    gap: 2em;
+    align-items: center;
+}
+
 /*sidebar section*/
 
 
@@ -50,6 +75,10 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 1.5em;
+}
+
+.hidden {
+    display: none !important;
 }
 
 .sidebar h2 {

@@ -67,5 +67,10 @@ function displayOnClick(){
         //calls the displayObj function on button click
 }
 
+function showForm(){
+    const frm = document.querySelector('.sidebar');
+    frm.classList.toggle('hidden');
+}
+
 addBookToLibrary()
 displayOnClick()
