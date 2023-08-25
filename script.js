@@ -48,77 +48,14 @@ function displayObj(){
 }
 
 function showForm(){
-    const container = document.querySelector('.container');
-    
-    if (container.querySelector('.contChild') == null){
-        const sidebar = document.createElement('div');
-        sidebar.classList.add('sidebar', 'contChild');
-        document.querySelector('.container').appendChild(sidebar);
+    document.querySelector('.sidebar').classList.toggle('hidden');
 
-        const h2 = document.createElement('h2');
-        h2.innerHTML = 'Add new book';
-        sidebar.appendChild(h2);
-
-        const form = document.createElement('form');
-        form.setAttribute('id', 'bookInfo');
-        sidebar.appendChild(form);
-
-        for (let i = 0; i <= 2; i++) {
-            const div = document.createElement('div');
-            form.appendChild(div);
-        }
-
-        const label0 = document.createElement('label');
-        label0.setAttribute('for', 'Title');
-        label0.innerHTML = 'Book Title';
-        form.childNodes[0].appendChild(label0);
-
-        const label1 = document.createElement('label');
-        label1.setAttribute('for','Author');
-        label1.innerHTML = 'Author';
-        form.childNodes[1].appendChild(label1);
-
-        const label2 = document.createElement('label');
-        label2.setAttribute('for','Year');
-        label2.innerHTML = 'Year of Publishing';
-        form.childNodes[2].appendChild(label2);
-
-        const textInp0 = document.createElement('input');
-        textInp0.setAttribute('type', 'text');
-        textInp0.setAttribute('name','Title');
-        textInp0.setAttribute('id','Title');
-        textInp0.setAttribute('placeholder','The Cat in The Hat...');
-        form.childNodes[0].appendChild(textInp0);
-
-        const textInp1 = document.createElement('input');
-        textInp1.setAttribute('type', 'text');
-        textInp1.setAttribute('name','Author');
-        textInp1.setAttribute('id','Author');
-        textInp1.setAttribute('placeholder','Dr. Seuss');
-        form.childNodes[1].appendChild(textInp1);
-
-        const textInp2 = document.createElement('input');
-        textInp2.setAttribute('type', 'number');
-        textInp2.setAttribute('name','Year');
-        textInp2.setAttribute('id','Year');
-        textInp2.setAttribute('placeholder','1957');
-        form.childNodes[2].appendChild(textInp2);
-
-        const btn = document.createElement('button');
-        btn.classList.add('mainBtn','shwForm','subBtn');
-        btn.setAttribute('onclick', 'addBookToLibrary()',);
-        btn.innerHTML= 'Add to Library';
-        sidebar.appendChild(btn);
-
+    if (document.querySelector('.shwForm').innerHTML === 'New Book'){
         document.querySelector('.shwForm').innerHTML = 'Hide Menu';
-
-    } else if (container.querySelector('.contChild') != null){
-        container.removeChild(container.querySelector('.sidebar'));
+    }else if (document.querySelector('.shwForm').innerHTML === 'Hide Menu') {
         document.querySelector('.shwForm').innerHTML = 'New Book';
     }
-
-    //allows to toggle the entire form area by deleting it or creating it in the dom
-    //could have done this with about 3 lines of code (and I had) but genuinely thought this would behave differently. Now I'm not removing it either.
+    //allows to toggle the entire form area on or off
 }
 
 function displayOnClick(){
