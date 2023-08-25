@@ -6,6 +6,7 @@ html,body {
     grid-template-rows: 1fr 1fr 4fr;
     background-color: #bae6fd;
     height: 100%;
+    position: relative;
 }
 /*header ssection */
 header {
@@ -16,6 +17,7 @@ header {
     color: #f0f9ff;
     align-items: center;
     grid-row: 1/2;
+    box-shadow: 0px 5px 10px black;
 }
 
 .user {
@@ -49,6 +51,8 @@ header {
     font-weight: bold;
     color: #f0f9ff;
     height: 3em;
+    display: flex;
+    align-items: center;
 }
 
 .mainBtn {
@@ -75,10 +79,11 @@ header {
     flex-direction: column;
     align-items: center;
     padding: 1.5em;
-}
-
-.hidden {
-    display: none !important;
+    position: absolute;
+    grid-row: 2/3;
+    justify-self: center;
+    width: 100%;
+    box-shadow: 0px 5px 10px black;
 }
 
 .sidebar h2 {
@@ -117,7 +122,7 @@ header {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     height: 100%;
     box-sizing: border-box;
-    grid-row: 3/4;
+    grid-row: 2/4;
     overflow: auto;
     place-items: center;
 }
