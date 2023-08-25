@@ -32,7 +32,9 @@ function addBookToLibrary() {
             alert('Please fill all fields');
         }else {
         const newBook = new Book(title.value , author.value , year.value);
-        myLibrary.push(newBook);}
+        myLibrary.push(newBook);
+        bookInfo.reset();
+    }
         displayOnClick()
         
         //creates the book object by taking user input, pushes it into array and calls function to display books onscreen
