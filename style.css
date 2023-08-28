@@ -139,4 +139,47 @@ header {
     border: 2px solid #082f49;
     padding: 2em;
     box-sizing: border-box;
+    box-shadow: 8px 8px 25px black;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.display div ul {
+    padding-left: 0px;
+}
+
+.display div li {
+    display: flex;
+    align-items: baseline;
+    gap: .2em;
+}
+
+.display div p {
+    margin: 0;
+}
+
+.display div span{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.display>div>.btnDiv {
+    border: none;
+    align-self: flex-end;
+    box-shadow: none;
+    height: 25px;
+    width: 50px;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.display>div>.btnDiv button {
+    background-color: transparent;
+    border: none;
+}
+
+.display>div>.btnDiv button:hover {
+    font-size: 1.2em;
 }

@@ -44,8 +44,51 @@ function displayObj(){
     myLibrary.forEach(element => {
         const display = document.querySelector('.display');
         const newDiv = document.createElement('div');
-        newDiv.innerHTML = 'Title - ' + element.title + '; Author - ' + element.author + '; Year - ' + element.year;
-        display.appendChild(newDiv);})
+        display.appendChild(newDiv);
+        
+        const list = document.createElement('ul');
+        newDiv.appendChild(list);
+
+        for (let i = 0; i <= 2; i++) {
+            const listElement = document.createElement('li');
+            const span = document.createElement('span');
+            list.appendChild(listElement);
+            listElement.appendChild(span);}
+
+        list.childNodes[0].childNodes[0].innerHTML = 'Title:';
+        list.childNodes[1].childNodes[0].innerHTML = 'Author:';
+        list.childNodes[2].childNodes[0].innerHTML = 'Year:';
+
+        let title = document.createElement('p');
+        title.innerHTML = element.title;
+        let author = document.createElement('p');
+        author.innerHTML = element.author;
+        let year = document.createElement('p');
+        year.innerHTML = element.year;
+
+        list.childNodes[0].appendChild(title);
+        list.childNodes[1].appendChild(author);
+        list.childNodes[2].appendChild(year);
+        
+        const btnDiv = document.createElement('div');
+        btnDiv.classList.add('btnDiv');
+        newDiv.appendChild(btnDiv);
+        
+        for (let i = 0; i <= 1; i++) {
+            const btn = document.createElement('button');
+            btn.classList.add('num'+i);
+            btnDiv.appendChild(btn);}
+        
+        const checkSpan = document.createElement('span');
+        checkSpan.classList.add('fa-solid', 'fa-circle-check');
+        checkSpan.style.fontWeight = 400;
+        btnDiv.childNodes[0].appendChild(checkSpan);
+        
+        const trashSpan = document.createElement('span');
+        trashSpan.classList.add('fa-solid', 'fa-trash-can');
+        trashSpan.style.fontWeight = 400;
+        btnDiv.childNodes[1].appendChild(trashSpan);
+    })
         //pulls each object from array and displays its properties on a div
 }
 
