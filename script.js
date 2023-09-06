@@ -74,20 +74,15 @@ function displayObj(){
         btnDiv.classList.add('btnDiv');
         newDiv.appendChild(btnDiv);
         
-        for (let i = 0; i <= 1; i++) {
-            const btn = document.createElement('button');
-            btn.classList.add('num'+i);
-            btnDiv.appendChild(btn);}
-        
         const checkSpan = document.createElement('span');
         checkSpan.classList.add('fa-solid', 'fa-circle-check');
         checkSpan.style.fontWeight = 400;
-        btnDiv.childNodes[0].appendChild(checkSpan);
+        btnDiv.appendChild(checkSpan);
         
         const trashSpan = document.createElement('span');
         trashSpan.classList.add('fa-solid', 'fa-trash-can');
         trashSpan.style.fontWeight = 400;
-        btnDiv.childNodes[1].appendChild(trashSpan);
+        btnDiv.appendChild(trashSpan);
     })
         //pulls each object from array and displays its properties on a div
 }

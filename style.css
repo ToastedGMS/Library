@@ -175,11 +175,6 @@ header {
     flex-direction: row;
 }
 
-.display>div>.btnDiv button {
-    background-color: transparent;
-    border: none;
-}
-
-.display>div>.btnDiv button:hover {
-    font-size: 1.2em;
+.display>div>.btnDiv span:hover {
+    font-size: 1.4em;
 }
