@@ -42,6 +42,7 @@ function addBookToLibrary() {
 
 function displayObj(){
     myLibrary.forEach(element => {
+        const libIndex = myLibrary.indexOf(element);
         const display = document.querySelector('.display');
         const newDiv = document.createElement('div');
         display.appendChild(newDiv);
@@ -83,6 +84,10 @@ function displayObj(){
         trashSpan.classList.add('fa-solid', 'fa-trash-can');
         trashSpan.style.fontWeight = 400;
         btnDiv.appendChild(trashSpan);
+        trashSpan.addEventListener('click', function(){
+            myLibrary.splice(libIndex, 1);
+            displayOnClick()
+        })
     })
         //pulls each object from array and displays its properties on a div
 }
