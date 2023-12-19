@@ -1,24 +1,14 @@
 // Initialize the library with some initial books (dummy data for testing).
-const myLibrary = [
-    {
-        "title": "Bible",
-        "author": "God",
-        "year": "2002"
-    },
-    {
-        "title": "Bible 2",
-        "author": "The Rock",
-        "year": "2022"
-    }
-    //SHOULD be deleted later
-];
+const myLibrary = [];
 
 // Book constructor function to create book objects.
-function Book(title, author, year) {
-    this.title = title;
-    this.author = author;
-    this.year = year;
-    this.read = false; 
+class Book {
+    constructor(title, author, year) {
+        this.title = title;
+        this.author = author;
+        this.year = year;
+        this.read = false;
+    }
 }
 
 const subBtn = document.querySelector('.mainBtn');
