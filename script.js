@@ -1,7 +1,7 @@
 // Initialize the library with some initial books (dummy data for testing).
 const myLibrary = [];
 
-// Book constructor function to create book objects.
+// Book constructor class to create book objects.
 class Book {
     constructor(title, author, year) {
         this.title = title;
